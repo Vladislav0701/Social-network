@@ -1,0 +1,36 @@
+.wrapper {
+    padding: 15px 20px;
+    display: inline-block;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+textarea {
+    width: 700px;
+    height: 60px;
+    background-color: #dadff0ea;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.news {
+    position: relative;
+    margin-bottom: 90px;
+}
+
+button {
+    position: absolute;
+    bottom: -45px;
+    right: 0;
+    padding: 10px 25px;
+    background-color: #839bb1;
+    color: #fff;
+    border: 0;
+    border-radius: 15px;
+    cursor: pointer;
+
+}

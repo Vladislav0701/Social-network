@@ -1,0 +1,26 @@
+.content {
+    grid-area: content1;
+    margin-top: 15px;
+    padding: 0 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    color: rgb(39, 42, 61);
+  }
+
+.img {
+  width: 700px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  position: relative;
+}
+  
+.img img {
+    position: absolute;
+    width: 100%;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+}
+  

@@ -1,0 +1,18 @@
+.wrapper {
+    display: flex;
+}
+
+.wrapper img {
+    height: 150px;
+    border-radius: 15px;
+    margin-right: 25px;
+}
+
+.wrapper div {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper p {
+    margin : 0;
+}
