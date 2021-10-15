@@ -4,6 +4,13 @@ import style from "./MyPost.module.css";
 
 
 const MyPost = () => {
+    let postData = [
+        {id: 1, messages: "Hello how are you", likeCount: 23},
+        {id: 2, messages: "Hi! How was your day", likeCount: 79},
+    ]
+
+    const postsElements = postData.map((p) => <Post messages={p.messages} likeCount={p.likeCount} />)
+
     return (
         <div className={style.wrapper}>
             <h3>
@@ -15,8 +22,7 @@ const MyPost = () => {
                 <button>Send</button>
             </div>
             <div>
-                <Post messages="Hello how are you" likeCount="23" />
-                <Post messages="Hi! How was your day" likeCount="79" />
+                {postsElements}
             </div>
                 
         </div>
