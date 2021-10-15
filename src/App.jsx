@@ -12,7 +12,7 @@ import Settings from "./components/Sett/Settings"
 import style from "./App.module.css";
 
 
-function App() {
+function App(props) {
 
 
   return (
@@ -21,11 +21,11 @@ function App() {
         <Header />
         <NavBar />
         <div className={style.content}>
-          <Route path="/profile" component={Profile}/>
-          <Route path="/dialogs" component={Dialogs}/>
-          <Route path="/news" component={News}/>
-          <Route path="/music" component={Music}/>
-          <Route path="/settings" component={Settings}/>
+          <Route path="/profile" render={ () => <Profile postData={props.postData} /> }/>
+          <Route path="/dialogs" render={ () => <Dialogs dialogsData={props.dialogsData} messageData={props.messageData} />}/>
+          <Route path="/news" render={ () => <News /> }/>
+          <Route path="/music" render={ () => <Music /> }/>
+          <Route path="/settings" render={ () => <Settings /> }/>
         </div>
             
         

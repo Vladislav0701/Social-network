@@ -1,0 +1,31 @@
+.item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 20px 40px 20px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.item img {
+    height: 40px;
+    border-radius: 20px;
+    margin-right: 15px;
+}
+
+.item a {
+    text-decoration: none;
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 15px;
+    color: rgb(121, 130, 170);
+}
+
+.item a.active {
+    color: rgb(37, 40, 65);
+    font-size: 16px;
+}
+
+.item a:hover {
+    color: rgb(118, 138, 240);
+}
