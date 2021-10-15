@@ -1,5 +1,5 @@
 
-.app-wrapper {
+.wrapper {
   display: grid;
   grid-template-areas: 
   "nav header"
@@ -10,4 +10,13 @@
   width: 1200px;
   margin: 15px auto;
   overflow: hidden;
+}
+
+.content {
+  grid-area: content1;
+  margin-top: 15px;
+  padding: 0 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  color: rgb(39, 42, 61);
 }

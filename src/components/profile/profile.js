@@ -1,7 +1,7 @@
 import React from 'react';
-import MyInfo from './myInfo/myInfo';
-import MyPost from './myPost/myPost';
-import style from "./profile.module.css";
+import MyInfo from './MyInfo/MyInfo';
+import MyPost from './MyPost/MyPost';
+import style from "./Profile.module.css";
 
 const Profile = () => {
     return (
