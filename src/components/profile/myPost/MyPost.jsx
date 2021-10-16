@@ -1,12 +1,22 @@
 import React from 'react';
+
 import Post from "./Post/Post";
+
 import style from "./MyPost.module.css";
 
 
 const MyPost = (props) => {
-    
+    let postsElements = props.postData.map((p) => <Post messages={p.messages} likeCount={p.likeCount} />);
+    let newPostElement = React.createRef();
 
-    const postsElements = props.postData.map((p) => <Post messages={p.messages} likeCount={p.likeCount} />)
+    let addPost = () => {
+        props.addPost();
+    }
+
+    let onPostChange = () => {
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text);
+    }
 
     return (
         <div className={style.wrapper}>
@@ -15,8 +25,12 @@ const MyPost = (props) => {
             </h3>
             
             <div className={style.news}>
-                <textarea placeholder="Your news..."></textarea>
-                <button>Send</button>
+                <textarea 
+                    onChange={onPostChange} 
+                    ref={newPostElement} 
+                    placeholder="Your news..."
+                    value={props.newPostText} />
+                <button onClick={addPost}>Send</button>
             </div>
             <div>
                 {postsElements}

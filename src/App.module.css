@@ -20,3 +20,8 @@
   overflow: hidden;
   color: rgb(39, 42, 61);
 }
+
+input::-webkit-input-placeholder { color: rgba(121, 130, 170, 0.5) }
+input::-moz-placeholder          { color: rgba(121, 130, 170, 0.5) } 
+input:-moz-placeholder           { color: rgba(121, 130, 170, 0.5) } 
+input:-ms-input-placeholder      { color: rgba(121, 130, 170, 0.5) }

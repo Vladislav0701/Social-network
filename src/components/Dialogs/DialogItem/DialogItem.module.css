@@ -2,13 +2,13 @@
     display: flex;
     align-items: center;
     margin-bottom: 5px;
-    padding: 20px 40px 20px 20px;
+    padding: 20px 60px 20px 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
 .item img {
-    height: 40px;
+    height: 35px;
     border-radius: 20px;
     margin-right: 15px;
 }
@@ -17,13 +17,13 @@
     text-decoration: none;
     font-family: "Roboto";
     font-weight: 500;
-    font-size: 15px;
+    font-size: 14px;
     color: rgb(121, 130, 170);
 }
 
 .item a.active {
     color: rgb(37, 40, 65);
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .item a:hover {

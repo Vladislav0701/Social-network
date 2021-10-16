@@ -7,7 +7,7 @@ h3 {
     font-size: 20px;
 }
 
-textarea {
+.news textarea {
     width: 700px;
     height: 60px;
     background-color: #dadff0ea;

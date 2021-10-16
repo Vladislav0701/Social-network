@@ -4,10 +4,37 @@
 }
 
 .dialogs {
-    padding: 15px 20px 15px 0px;
+    padding: 15px 40px 15px 20px;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .messages {
-    padding: 15px;
+    padding: 35px;
+    display: inline-block;
+}
+
+.newMessage {
+    position: relative;
+}
+
+.newMessage textarea {
+    width: 90%;
+    height: 60px;
+    background-color: #dadff0ea;
+    border: 0;
+    border-radius: 10px;
+    padding: 20px 20px;
+    font-size: 16px;
+}
+
+.newMessage button {
+    position: absolute;
+    bottom: -45px;
+    right: 0px;
+    padding: 10px 25px;
+    background-color: #839bb1;
+    color: #fff;
+    border: 0;
+    border-radius: 15px;
+    cursor: pointer;
 }

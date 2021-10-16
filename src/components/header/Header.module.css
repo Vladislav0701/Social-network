@@ -13,18 +13,12 @@
     color: rgb(121, 130, 170);
 }
 
-.form input{
+.form input {
     background: none;
     border: 1px solid rgba(0, 0, 0, 0.2);
     padding: 10px 35px 10px 40px;
     border-radius: 20px;
-    
 }
-
-input::-webkit-input-placeholder { color: rgba(121, 130, 170, 0.5) }
-input::-moz-placeholder          { color: rgba(121, 130, 170, 0.5) } 
-input:-moz-placeholder           { color: rgba(121, 130, 170, 0.5) } 
-input:-ms-input-placeholder      { color: rgba(121, 130, 170, 0.5) }
 
 .form .search {
     position: absolute;
