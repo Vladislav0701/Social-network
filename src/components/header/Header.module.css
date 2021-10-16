@@ -1,6 +1,70 @@
 .header {
     grid-area: header;
     padding: 10px 25px;
-    background-color: rgb(160, 168, 206);
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(78, 85, 116);
+}
+
+.form {
+    position: relative;
+    color: rgb(121, 130, 170);
+}
+
+.form input{
+    background: none;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px 35px 10px 40px;
+    border-radius: 20px;
+    
+}
+
+input::-webkit-input-placeholder { color: rgba(121, 130, 170, 0.5) }
+input::-moz-placeholder          { color: rgba(121, 130, 170, 0.5) } 
+input:-moz-placeholder           { color: rgba(121, 130, 170, 0.5) } 
+input:-ms-input-placeholder      { color: rgba(121, 130, 170, 0.5) }
+
+.form .search {
+    position: absolute;
+    left: 10px;
+    top: 20%;
+    bottom: 20%;
+    background: none;
+    border: none;
+    color: rgba(121, 130, 170, 0.5)
+}
+
+.form .micro {
+    position: absolute;
+    right: 15px;
+    top: 20%;
+    bottom: 20%;
+    background: none;
+    border: none;
+    color: rgba(121, 130, 170, 0.6)
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.user button {
+    margin-right: 15px;
+    background: none;
+    border: 0px;
+    color: rgba(121, 130, 170, .6);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.user img {
+    height: 35px;
+    border-radius: 15px;
+    margin: 0 20px;
 }

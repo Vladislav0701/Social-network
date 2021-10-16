@@ -19,10 +19,10 @@ function App(props) {
     <BrowserRouter>
       <div className={style.wrapper}>
         <Header />
-        <NavBar />
+        <NavBar state={props.state}/>
         <div className={style.content}>
-          <Route path="/profile" render={ () => <Profile postData={props.postData} /> }/>
-          <Route path="/dialogs" render={ () => <Dialogs dialogsData={props.dialogsData} messageData={props.messageData} />}/>
+          <Route path="/profile" render={ () => <Profile state={props.state.profilePage} /> }/>
+          <Route path="/dialogs" render={ () => <Dialogs state={props.state.dialogsPage} />}/>
           <Route path="/news" render={ () => <News /> }/>
           <Route path="/music" render={ () => <Music /> }/>
           <Route path="/settings" render={ () => <Settings /> }/>

@@ -10,7 +10,7 @@ const Profile = (props) => {
                 <img src="https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg" alt="Profile" />
             </div>
             <MyInfo  data="07.01.1998" city="Saint Petersburg" education="BGLK" site="it-kam.com"/>
-            <MyPost postData={props.postData}/>
+            <MyPost postData={props.state.postData}/>
         </div>
     )
 }

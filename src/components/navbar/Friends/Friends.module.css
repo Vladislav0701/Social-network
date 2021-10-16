@@ -1,0 +1,19 @@
+.wrapper {
+    color: rgb(121, 130, 170);
+    font-size: 18px;
+    margin-top: 60px;
+}
+
+.items {
+    display: flex;
+    justify-content: space-between
+}
+
+.item p {
+    color: #000;
+}
+
+.item img {
+    height: 25px;
+    border-radius: 15px;
+}

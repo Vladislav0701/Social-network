@@ -3,34 +3,14 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 
 import App from './App';
+import state from "./rexud/state"
 
 import './index.css';
-
-let dialogsData = [
-  { name: "Dimych", id: 1 },
-  { name: "Andrey", id: 2 },
-  { name: "Sveta", id: 3 },
-  { name: "Nastay", id: 4 },
-  { name: "Sasha", id: 5 },
-  { name: "Alex", id: 6 }
-];
-
-let messageData = [
-  { id: 1, message: "Hi" },
-  { id: 2, message: "How is your it-cam ?" },
-  { id: 3, message: "Yo" },
-  { id: 4, message: "What's up ?" }
-]
-
-let postData = [
-  {id: 1, messages: "Hello how are you", likeCount: 23},
-  {id: 2, messages: "Hi! How was your day", likeCount: 79}
-]
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js" integrity="sha512-cyAbuGborsD25bhT/uz++wPqrh5cqPh1ULJz4NSpN9ktWcA6Hnh9g+CWKeNx2R0fgQt+ybRXdabSBgYXkQTTmA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 ReactDOM.render(
   <React.StrictMode>
-    <App dialogsData={dialogsData} messageData={messageData} postData={postData}/>
+    <App state={state}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

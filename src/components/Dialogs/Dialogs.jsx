@@ -6,8 +6,8 @@ import DialogMessage from "./DialogMessage/DialogMessage";
 import style from "./Dialogs.module.css";
 
 const Dialogs = (props) => {
-    const dialogsElements = props.dialogsData.map((d) => <DialogItem name={d.name} id={d.id} />);
-    const messagesElements = props.messageData.map((m) => <DialogMessage message={m.message} />);
+    const dialogsElements = props.state.dialogsData.map((d) => <DialogItem name={d.name} id={d.id} />);
+    const messagesElements = props.state.messageData.map((m) => <DialogMessage message={m.message} />);
 
     return (
         <div className={style.wrapper}>
