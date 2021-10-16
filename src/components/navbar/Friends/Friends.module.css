@@ -4,16 +4,7 @@
     margin-top: 60px;
 }
 
-.items {
+.item {
     display: flex;
-    justify-content: space-between
-}
-
-.item p {
-    color: #000;
-}
-
-.item img {
-    height: 25px;
-    border-radius: 15px;
+    justify-content: space-between;
 }
