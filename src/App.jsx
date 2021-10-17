@@ -23,8 +23,8 @@ function App(props) {
         <div className={style.content}>
           <Route path="/profile" render={() => <Profile
             state={props.state.profilePage}
-            addPost={props.addPost} />}
-            updateNewPostText={props.updateNewPostText} />
+            updateNewPostText={props.updateNewPostText}
+            addPost={props.addPost} />} />
           <Route path="/dialogs" render={() => <Dialogs
             state={props.state.dialogsPage}
             addMessage={props.addMessage} />} />

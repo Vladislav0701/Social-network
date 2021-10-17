@@ -23,7 +23,6 @@ const MyPost = (props) => {
             <h3>
                 My post
             </h3>
-            
             <div className={style.news}>
                 <textarea 
                     onChange={onPostChange} 
