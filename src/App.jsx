@@ -13,8 +13,7 @@ import style from "./App.module.css";
 
 
 function App(props) {
-
-
+  debugger;
   return (
     <BrowserRouter>
       <div className={style.wrapper}>
@@ -27,7 +26,8 @@ function App(props) {
             addPost={props.addPost} />} />
           <Route path="/dialogs" render={() => <Dialogs
             state={props.state.dialogsPage}
-            addMessage={props.addMessage} />} />
+            addMessage={props.addMessage} 
+            updateNewMessageText={props.updateNewMessageText}/>} />
           <Route path="/news" render={() => <News />} />
           <Route path="/music" render={() => <Music />} />
           <Route path="/settings" render={() => <Settings />} />
@@ -38,6 +38,8 @@ function App(props) {
       </div>
     </BrowserRouter>
   )
+
+  
 }
 
 export default App;

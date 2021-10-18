@@ -6,6 +6,7 @@ import Friends from './Friends/Friends';
 import style from "./Navbar.module.css";
 
 const NavBar = (props) => {
+    debugger;
     return (
         <div className={style.wrapper}>
             <div className={style.logo}>
@@ -28,7 +29,7 @@ const NavBar = (props) => {
                     <NavLink to="/settings" activeClassName={style.active}>Settings</NavLink>
                 </div>
             </nav>
-            <Friends state={props.state.friends}/>
+            <Friends state={props.state}/>
         </div>
         
     )
