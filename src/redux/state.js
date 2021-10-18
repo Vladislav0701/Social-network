@@ -42,11 +42,6 @@ let store = {
     } 
   },
 
-  _callSubscriber() {
-    console.log("state changed");
-  },
-
-
   getState() {
     return this._state;
   },
@@ -73,12 +68,16 @@ let store = {
         id: 5, 
         message: this._state.dialogsPage.newMessageText
       }
+      debugger;
       this._state.dialogsPage.messageData.push(newMessage);
       this._state.dialogsPage.newMessageText = "";
+      debugger;
       this._callSubscriber(this._state);
     } else if ( action.type === UPDATE_NEW_MESSAGE_TEXT) {
       this._state.dialogsPage.newMessageText = action.newText;
+      debugger;
       this._callSubscriber(this._state)
+      debugger;
     }
   }
   

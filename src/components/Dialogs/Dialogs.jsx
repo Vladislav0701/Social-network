@@ -9,18 +9,19 @@ import style from "./Dialogs.module.css";
 const Dialogs = (props) => {
     const dialogsElements = props.state.dialogsData.map((d) => <DialogItem name={d.name} id={d.id} />);
     const messagesElements = props.state.messageData.map((m) => <DialogMessage message={m.message} />);
-    let newMessageElement = React.createRef();
 
 
     let addMessage = () => {
-        props.dispatch(addMessageActionCreator);
+        props.dispatch(addMessageActionCreator());
     }
 
-    let onMessageChange = () => {
-        let text = newMessageElement.current.value;
-        let action = updateNewMessageTextActionCreator(text)
+    let onMessageChange = (e) => {
+        let target = e.target.value;
+        let action = updateNewMessageTextActionCreator(target)
         props.dispatch(action);
     }
+
+    debugger;
 
     return (
         <div className={style.wrapper}>
@@ -33,9 +34,8 @@ const Dialogs = (props) => {
                 </div>
                 <div className={style.newMessage}>
                     <textarea 
-                        ref={newMessageElement}
                         onChange={onMessageChange} 
-                        value={props.newMessageText}/>
+                        value={props.state.newMessageText} />
                     <button onClick={addMessage}>
                         Send
                     </button>
