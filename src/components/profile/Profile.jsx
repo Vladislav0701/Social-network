@@ -11,10 +11,9 @@ const Profile = (props) => {
             </div>
             <MyInfo  data="07.01.1998" city="Saint Petersburg" education="BGLK" site="it-kam.com"/>
             <MyPost 
-                postData={props.state.postData} 
-                addPost={props.addPost}
+                postData={props.state.postData}
                 newPostText={props.state.newPostText}
-                updateNewPostText={props.updateNewPostText}/>
+                dispatch={props.dispatch}/>
         </div>
     )
 }

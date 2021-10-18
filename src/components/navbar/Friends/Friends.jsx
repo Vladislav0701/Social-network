@@ -5,7 +5,6 @@ import Friend from "./Friend/Friend";
 import style from "./Friends.module.css";
 
 const Friends = (props) => {
-    debugger;
     const friendsElements = props.state.friends.map((p) => <Friend name={p.name} />)
 
     return (
