@@ -6,8 +6,11 @@ import DialogMessage from "./DialogMessage/DialogMessage";
 import style from "./Dialogs.module.css";
 
 const Dialogs = (props) => {
-    const dialogsElements = props.state.dialogsData.map((d) => <DialogItem name={d.name} id={d.id} />);
-    const messagesElements = props.state.messageData.map((m) => <DialogMessage message={m.message} />);
+
+    let state = props.dialogsPage;
+
+    const dialogsElements = state.dialogsData.map((d) => <DialogItem name={d.name} id={d.id} />);
+    const messagesElements = state.messageData.map((m) => <DialogMessage message={m.message} />);
 
     let addMessage = (text) => {
         props.addMessage(text);
@@ -30,7 +33,7 @@ const Dialogs = (props) => {
                 <div className={style.newMessage}>
                     <textarea 
                         onChange={onMessageChange} 
-                        value={props.state.newMessageText} />
+                        value={state.newMessageText} />
                     <button onClick={addMessage}>
                         Send
                     </button>
