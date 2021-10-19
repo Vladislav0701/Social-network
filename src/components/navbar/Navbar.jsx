@@ -30,8 +30,7 @@ const NavBar = (props) => {
                 </div>
             </nav>
             <Friends state={props.state}/>
-        </div>
-        
+        </div>    
     )
 }
 
