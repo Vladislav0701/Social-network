@@ -6,6 +6,7 @@ import Friends from './Friends/Friends';
 import style from "./Navbar.module.css";
 
 const NavBar = (props) => {
+
     return (
         <div className={style.wrapper}>
             <div className={style.logo}>
