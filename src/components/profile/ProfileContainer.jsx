@@ -22,9 +22,8 @@ class ProfileContainer extends React.Component {
     }
 
     render() {
-        debugger;
         return (
-            <Profile {...this.props} profile={this.props.profile}/>
+            <Profile {...this.props} profile={this.props.profile} />
         )
     }
 }
@@ -35,4 +34,4 @@ let mapStateToProps = (state) => ({
 
 let WithUrlDataContainerComponent = withRouter(ProfileContainer)
 
-export default connect(mapStateToProps, {setUserProfile})(WithUrlDataContainerComponent);
+export default connect(mapStateToProps, { setUserProfile })(WithUrlDataContainerComponent);

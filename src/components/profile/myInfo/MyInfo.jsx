@@ -6,7 +6,7 @@ import Preloader from "../../common/preloader/Preloader"
 const MyInfo = (props) => {
 
     if(!props.profile) {
-        return <Preloader />
+       return <Preloader />
     }
 
     return (
