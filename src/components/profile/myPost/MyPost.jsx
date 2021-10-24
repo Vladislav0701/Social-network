@@ -17,6 +17,7 @@ const MyPost = (props) => {
         let text = newPostElement.current.value;
         props.updateNewPostTextAction(text)
     }
+    
     return (
         <div className={style.wrapper}>
             <h3>
