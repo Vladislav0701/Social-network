@@ -1,16 +1,23 @@
 import React from "react";
+
 import style from "./MyInfo.module.css";
+import Preloader from "../../common/preloader/Preloader"
 
 const MyInfo = (props) => {
+
+    if(!props.profile) {
+        <Preloader />
+    }
+
     return (
         <div className={style.wrapper}>
-            <img src="https://n1s2.starhit.ru/6a/46/ae/6a46aeed947a183d67d1bc48211151bf/480x496_0_2bbde84177c9ff1c2299a26a0f69f69c@480x496_0xac120003_4430520541578509619.jpg" alt="avatar" />
+            <img src={props.profile.photos.small} alt="avatar" />
             <div>
                 <h2>
-                    Neytiri Salli
+                    {props.profile.fullName}
                 </h2>
                 <p>
-                    Data of Birth: {props.data}
+                    Data of Birth: {props.profile.aboutMe}
                 </p>
                 <p>
                     City: {props.city}
