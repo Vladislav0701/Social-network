@@ -9,12 +9,12 @@ const Header = (props) => {
             <div>
                 <form className={style.form} action="" method="get">
                     <button className={style.search} type="submit">
-                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <i className="fa fa-search" aria-hidden="true"></i>
                     </button>
 
                     <input name="s" placeholder="Искать здесь..." type="search" />
                     <button className={style.micro} type="submit">
-                        <i class="fa fa-microphone" aria-hidden="true"></i>
+                        <i className="fa fa-microphone" aria-hidden="true"></i>
                     </button>
                 </form>
             </div>
