@@ -16,7 +16,8 @@ export const getUsers = (currentPage = 1, pageSize = 5) => {
 }
 
 export const queryUnfollow = (id) => {
-    return instance.delete(`follow/${id}`)}
+    return instance.delete(`follow/${id}`
+    )}
 
 export const queryFollow = (id) => {
     return instance.post(`follow/${id}`)}
