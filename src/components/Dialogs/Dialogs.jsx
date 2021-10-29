@@ -21,9 +21,6 @@ const Dialogs = (props) => {
         let target = e.target.value;
         props.onMessageChange(target)
     }
-    if (!props.isAuth) {
-        return <Redirect to={"/login"} />
-    };
 
     return (
         <div className={style.wrapper}>

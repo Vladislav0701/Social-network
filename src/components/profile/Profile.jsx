@@ -1,15 +1,10 @@
 import React from 'react';
-import { Redirect } from 'react-router';
 
 import MyInfo from './MyInfo/MyInfo';
 import MyPostContainer from './MyPost/MyPostContainer';
 import style from "./Profile.module.css";
 
 const Profile = (props) => {
-
-    if (!props.isAuth) {
-        return <Redirect to={"/login"} />
-    };
 
     return (
         <div className={style.content}>
