@@ -17,8 +17,21 @@ export const getUsers = (currentPage = 1, pageSize = 5) => {
 
 export const queryUnfollow = (id) => {
     return instance.delete(`follow/${id}`
-    )}
+    )
+}
 
 export const queryFollow = (id) => {
-    return instance.post(`follow/${id}`)}
-            
+    return instance.post(`follow/${id}`)
+}
+      
+export const authUser = () => {
+    return instance.get(`auth/me`)
+    .then(response => {
+            return response.data;
+        }
+    )
+}
+
+export const getProfileUser = (userId) => {
+    return instance.get(`profile/${userId}`)
+}

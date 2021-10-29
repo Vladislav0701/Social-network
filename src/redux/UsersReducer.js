@@ -1,6 +1,4 @@
 import { getUsers, queryUnfollow, queryFollow } from "../api/Api";
-import {  } from "../api/Api";
-import {  } from "../api/Api";
 
 const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
