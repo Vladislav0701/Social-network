@@ -1,9 +1,11 @@
 import React from "react";
 import { Component } from "react";
 import { connect } from "react-redux";
+import { compose } from "redux";
 
 import Header from "./Header";
 import { setAuthUserData, setAuthUser } from "./../../redux/AuthReducer";
+
 
 
 
@@ -26,4 +28,6 @@ let mapStateToProps = (state) => ({
     email: state.auth.email
 })
 
-export default connect(mapStateToProps, { setAuthUserData, setAuthUser })(HeaderContainer);
+export default compose(
+    connect(mapStateToProps, { setAuthUserData, setAuthUser })
+)(HeaderContainer);

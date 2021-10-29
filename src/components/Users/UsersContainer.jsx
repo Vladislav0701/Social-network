@@ -1,8 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
+import { compose } from "redux";
 
 import UsersApiContainer from "./UsersApiContainer"
 import { follow, unfollow, setCurrentPage, toggleIsFollowingProgress, getUsersThunkCreator } from "./../../redux/UsersReducer";
+
 
 let mapStateToProps = (state) => {
     return {
@@ -38,7 +40,7 @@ let mapStateToProps = (state) => {
 //     }
 // }
 
-const MyUsersContainer = connect(mapStateToProps, {follow, unfollow, setCurrentPage, 
-    toggleIsFollowingProgress, getUsersThunkCreator})(UsersApiContainer);
-
-export default MyUsersContainer;
+export default compose(
+    connect(mapStateToProps, {follow, unfollow, setCurrentPage, 
+        toggleIsFollowingProgress, getUsersThunkCreator})
+)(UsersApiContainer)
