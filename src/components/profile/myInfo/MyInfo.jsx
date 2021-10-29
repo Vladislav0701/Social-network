@@ -2,6 +2,7 @@ import React from "react";
 
 import style from "./MyInfo.module.css";
 import Preloader from "../../common/preloader/Preloader"
+import ProfileStatus from "./ProfileStatus";
 
 const MyInfo = (props) => {
 
@@ -17,7 +18,7 @@ const MyInfo = (props) => {
                     {props.profile.fullName}
                 </h2>
                 <p>
-                    Data of Birth: {props.profile.aboutMe}
+                    Data of Birth: <ProfileStatus {...props}/>
                 </p>
                 <p>
                     City: {props.city}
