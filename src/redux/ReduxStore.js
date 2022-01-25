@@ -1,20 +1,27 @@
-import { applyMiddleware, combineReducers, createStore } from "redux";
-import profileReducer from "./ProfileReducer";
+import { configureStore } from '@reduxjs/toolkit';
+
+import profilePage from "../components/Profile/ProfileSlice";
 import dialogsReducer from "./DialogsReducer";
 import sitebarReducer from "./SidebarReducer";
 import usersReducer from "./UsersReducer";
 import AuthReducer from "./AuthReducer";
-import thunkMiddleware from "redux-thunk";
 
-let reducers = combineReducers({
-    profilePage: profileReducer,
-    dialogsPage: dialogsReducer,
-    sidebar: sitebarReducer,
-    usersPage: usersReducer,
-    auth: AuthReducer
+let dialogsPage = dialogsReducer;
+let sidebar = sitebarReducer;
+let usersPage = usersReducer;
+let auth = AuthReducer;
+
+const store = configureStore({
+    reducer: {
+        profilePage,
+        dialogsPage,
+        sidebar,
+        usersPage,
+        auth
+    },
+    middleware: getDefaultMiddleware => getDefaultMiddleware(),
+    devTools: process.env.NODE_ENV !== 'production'
 });
-
-let store = createStore(reducers, applyMiddleware(thunkMiddleware));
 
 window.store = store;
 

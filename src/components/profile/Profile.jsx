@@ -11,8 +11,11 @@ const Profile = (props) => {
             <div className={style.img}>
                 <img src="https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg" alt="Profile" />
             </div>
-            <MyInfo profile={props.profile}/>
-            <MyPostContainer profile={props.profile}/>
+            <MyInfo 
+                profile={props.profile} 
+                status={props.status} 
+                updateStatus={props.updateStatus}/>
+            <MyPostContainer />
         </div>
     )
 }

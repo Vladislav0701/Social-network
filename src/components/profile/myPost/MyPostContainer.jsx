@@ -1,28 +1,18 @@
 import React from 'react';
-import { connect } from "react-redux";
+import { useSelector, useDispatch } from 'react-redux';
 
 import MyPost from './MyPost';
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/ProfileReducer';
+import { addPost } from '../ProfileSlice';
 
+const MyPostContainer = () => {
+    const {postData} = useSelector(state => state.profilePage);
+    const dispatch = useDispatch();
 
-let mapStateToProps = (state) => {
-    return {
-        postData: state.profilePage.postData,
-        newPostText: state.profilePage.newPostText
+    const onAddPost = (text) => {
+        dispatch(addPost(text))
     }
-}
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        addPostAction: (text) => {
-            dispatch(addPostActionCreator(text));
-        },
-        updateNewPostTextAction: (text) => {
-            dispatch(updateNewPostTextActionCreator(text));
-        }
-    }
+    return <MyPost postData={postData} onAddPost={onAddPost} />
 }
-
-const MyPostContainer = connect(mapStateToProps, mapDispatchToProps)(MyPost);
 
 export default MyPostContainer;

@@ -1,0 +1,47 @@
+.container {
+    padding: 30px 0 70px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    width: 280px;
+    margin: 70px auto 10px;
+    border-radius: 10px;
+    box-shadow: 2px 5px 7px rgba(0, 0, 0, 0.15);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    
+}
+
+.form_login, .form_password {
+    padding: 5px 0;
+    margin-top: 15px;
+    height: 25px;
+    border: 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+.form_button {
+    margin-top: 25px;
+    height: 35px;
+    background-color: #839bb1;
+    color: #fff;
+    border: 0;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.form_checkbox {
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 8px
+}

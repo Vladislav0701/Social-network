@@ -4,7 +4,6 @@ import sidebarReducer from "./SidebarReducer"
 
 
 let store = {
-
   _state: {
 
     profilePage: {

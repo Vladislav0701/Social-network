@@ -6,22 +6,28 @@ import ProfileStatus from "./ProfileStatus";
 
 const MyInfo = (props) => {
 
-    if(!props.profile) {
-       return <Preloader />
-    }
-
+    const content = props.profile ? <View {...props}/> : <Preloader/>;
     return (
         <div className={style.wrapper}>
-            <img src={props.profile.photos.small} alt="avatar" />
+           {content} 
+        </div>
+    )
+}
+
+const View = (props) => {
+
+    return (
+        <>
+             <img src={props.profile.photos.small} alt="avatar" />
             <div>
                 <h2>
                     {props.profile.fullName}
                 </h2>
                 <p>
-                    Data of Birth: <ProfileStatus {...props}/>
+                    Data of Birth: <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
                 </p>
                 <p>
-                    City: {props.city}
+                    About Me: {props.profile.aboutMe}
                 </p>
                 <p>
                     Education: {props.education}
@@ -30,8 +36,7 @@ const MyInfo = (props) => {
                     Web Site: {props.site}
                 </p>
             </div>
-            
-        </div>
+        </>
     )
 }
 

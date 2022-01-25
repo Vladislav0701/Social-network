@@ -1,4 +1,3 @@
-import React from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
 
@@ -16,29 +15,6 @@ let mapStateToProps = (state) => {
         followingInProgress: state.usersPage.followingInProgress
     }
 }
-
-// let mapDispatchToProps = (dispatch) => {
-//     return {
-//         follow: (userId) => {
-//             dispatch(followAC(userId))
-//         },
-//         unfollow: (userId) => {
-//             dispatch(unfollowAC(userId))
-//         },
-//         setUsersAC: (users) => {
-//             dispatch(setUsersAC(users))
-//         },
-//         setCurrentPageAC: (pageNumber) => {
-//             dispatch(setCurrentPageAC(pageNumber))
-//         },
-//         setTotalUsersCount: (totalCount) => {
-//             dispatch(setTotalUsersCountAC(totalCount))
-//         },
-//         toggleIsFetching: (isFetching) => {
-//             dispatch(toggleIsFetchingAC(isFetching))
-//         }
-//     }
-// }
 
 export default compose(
     connect(mapStateToProps, {follow, unfollow, setCurrentPage, 

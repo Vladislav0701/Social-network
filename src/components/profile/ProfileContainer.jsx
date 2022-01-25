@@ -1,41 +1,33 @@
-import React from "react";
-import { connect } from "react-redux";
-import { withRouter } from "react-router";
-import { compose } from "redux";
+import React, { useEffect} from "react";
 
 import Profile from "./Profile";
-import { setUserProfile, getProfileUserThunkCreator } from "../../redux/ProfileReducer";
-import { withAuthRedirect } from "../../hoc/withAuthRedirect";
+import { fetchStatus, fetchProfile } from "./ProfileSlice";
+import { useSelector, useDispatch } from "react-redux";
+import Preloader from "../common/preloader/Preloader";
 
+const ProfileContainer = () => {
+    const dispatch = useDispatch();
+    const { profile, profileLoadingStatus, status} = useSelector(state => state.profilePage);
+    const {id} = useSelector(state => state.auth);
 
+    useEffect(() => {
+        let userId = 2;
+        dispatch(fetchProfile(userId));
+        dispatch(fetchStatus(userId));
+    }, [dispatch])
 
+    const updateStatus = (status) => dispatch(fetchStatus(status))
 
-class ProfileContainer extends React.Component {
-
-    componentDidMount() {
-        let userId = this.props.match.params.userId;
-        if (!userId) {
-            userId = 2;
-        }
-        this.props.getProfileUserThunkCreator(userId);
+    if (profileLoadingStatus === 'loading') {
+        return <Preloader />
     }
 
-    render() {
-        return (
-            <Profile {...this.props} profile={this.props.profile} />
-        )
-    }
+    return (
+        <Profile 
+            profile={profile}
+            status={status}
+            updateStatus={updateStatus} />
+    )
 }
 
-let mapStateToProps = (state) => ({
-    profile: state.profilePage.profile,
-    isAuth: state.auth.isAuth
-    
-});
-
-export default compose(
-    connect(mapStateToProps, { setUserProfile, getProfileUserThunkCreator }),
-    withRouter,
-    withAuthRedirect
-)(ProfileContainer)
-
+export default ProfileContainer;

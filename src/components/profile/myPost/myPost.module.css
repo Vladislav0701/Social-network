@@ -20,6 +20,7 @@ h3 {
 .news {
     position: relative;
     margin-bottom: 90px;
+    width: 700px;
 }
 
 .news button {

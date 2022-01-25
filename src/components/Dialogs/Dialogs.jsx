@@ -1,5 +1,6 @@
 import React from "react";
-import { Redirect } from "react-router";
+import { Formik, Form, Field } from "formik";
+import * as yup from 'yup';
 
 import DialogItem from "./DialogItem/DialogItem"
 import DialogMessage from "./DialogMessage/DialogMessage";
@@ -13,15 +14,6 @@ const Dialogs = (props) => {
     const dialogsElements = state.dialogsData.map((d) => <DialogItem name={d.name} id={d.id} />);
     const messagesElements = state.messageData.map((m) => <DialogMessage message={m.message} />);
 
-    let addMessage = (text) => {
-        props.addMessage(text);
-    }
-
-    let onMessageChange = (e) => {
-        let target = e.target.value;
-        props.onMessageChange(target)
-    }
-
     return (
         <div className={style.wrapper}>
             <div className={style.dialogs}>
@@ -31,18 +23,31 @@ const Dialogs = (props) => {
                 <div>
                     {messagesElements}
                 </div>
-                <div className={style.newMessage}>
-                    <textarea 
-                        onChange={onMessageChange} 
-                        value={state.newMessageText} />
-                    <button onClick={addMessage}>
-                        Send
-                    </button>
-                </div>
+                <Formik
+                    initialValues={{
+                        message: ''
+                    }}
+                    validationSchema={yup.object({
+                        message: yup.string()
+                    })}
+                    onSubmit={({message}, action) => {
+                        props.addMessage(message)
+                        action.resetForm({})}}>
+                    {({ isSubmitting }) => (
+                        <Form className={style.newMessage}>
+                            <Field
+                                required
+                                as="textarea"
+                                type="text"
+                                name="message" />
+                            <button type="submit" disabled={isSubmitting}>
+                                Send
+                            </button>
+                        </Form>
+                    )}
+                </Formik>
             </div>
-
         </div>
-
     )
 }
 
